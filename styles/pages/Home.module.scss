@@ -1,0 +1,121 @@
+@import "@/styles/colors";
+@import "@/styles/mixins";
+
+.heroContainer {
+  height: 100%;
+  display: flex;
+  gap: 3em;
+  justify-content: space-around;
+  align-items: center;
+  margin-inline: 2em;
+
+  .hero {
+    .title {
+      font-size: 2em;
+      font-weight: 400;
+      letter-spacing: 1px;
+
+      .job {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-left: 0.3em;
+      }
+
+      .stopLooking {
+        margin-left: 1em;
+      }
+    }
+
+    .introduction,
+    .link {
+      border-left: 2px solid $clr-main;
+      padding-left: 1em;
+      margin-left: 1.5em;
+      margin-block: 2em;
+      font-size: 1.3em;
+      max-width: 30em;
+      line-height: 1.3;
+
+      .firstWord {
+        font-size: 2em;
+      }
+    }
+
+    .link {
+      line-height: 1.6;
+    }
+  }
+
+  .right {
+    width: 100%;
+    max-width: 45em;
+    flex: 1;
+    padding-right: 0.5em;
+  }
+}
+
+@media (max-width: 75em) {
+  .heroContainer {
+    flex-direction: column;
+    gap: 2em;
+    height: auto;
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 40em) and (max-width: 53em) {
+  .heroContainer {
+    .hero {
+      font-size: 0.7rem;
+      font-size: clamp(
+        0.7rem,
+        -0.22307692307692328rem + 2.3076923076923084vw,
+        1rem
+      );
+
+      .introduction,
+      .link {
+        padding-left: 0.5em;
+      }
+    }
+  }
+}
+
+@media (max-width: 40em) {
+  .heroContainer {
+    .hero {
+      font-size: 0.7rem;
+      font-size: clamp(
+        0.7rem,
+        0.4285714285714285rem + 1.4285714285714286vw,
+        1rem
+      );
+      .title {
+        .talented {
+          display: none;
+        }
+
+        .job {
+          font-size: 1.4rem;
+          font-size: clamp(
+            1.4rem,
+            0.13333333333333353rem + 6.666666666666665vw,
+            2.8rem
+          );
+        }
+
+        .job,
+        .stopLooking {
+          margin-left: 0;
+        }
+      }
+
+      .introduction,
+      .link {
+        padding-inline: 0.5em;
+        margin-left: 0;
+      }
+    }
+  }
+}

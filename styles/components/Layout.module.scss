@@ -1,0 +1,42 @@
+@import "@/styles/colors";
+
+.container {
+  max-width: 120em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .main {
+    flex-grow: 1;
+    margin: 1.5em 0 0.3em 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $clr-sec;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($clr-main, 0.5);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $clr-main;
+    }
+  }
+}
+
+@media (max-width: 51.875em) {
+  .container {
+    .main {
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+}
